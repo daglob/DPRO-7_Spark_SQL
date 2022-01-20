@@ -18,3 +18,19 @@ data.withColumn('max_new_cases', F.max('new_cases').over(window)) \
     .where(F.col('max_new_cases') == F.col('new_cases')) \
     .orderBy(F.col('max_new_cases').desc()) \
     .show(10)
+
+# +----------+--------------------+---------+
+# |      date|            location|new_cases|
+# +----------+--------------------+---------+
+# |2021-03-25|              Brazil| 100158.0|
+# |2021-03-26|             Hungary|  11265.0|
+# |2021-03-30|              Serbia|   9983.0|
+# |2021-03-30|              Greece|   4322.0|
+# |2021-03-29|              Kosovo|   4257.0|
+# |2021-03-29|Bosnia and Herzeg...|   3755.0|
+# |2021-03-24|             Moldova|   2273.0|
+# |2021-03-26|               Kenya|   2008.0|
+# |2021-03-31|     North Macedonia|   1511.0|
+# |2021-03-25|       Cote d'Ivoire|    767.0|
+# +----------+--------------------+---------+
+# only showing top 10 rows
